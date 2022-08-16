@@ -1,5 +1,6 @@
 import 'package:alcoolorgasolina/widget/logo.widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_masked_text/flutter_masked_text.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,13 +18,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: const HomePage(),
+      home: HomePage(),
     );
   }
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  var _gasController = new MoneyMaskedTextController();
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +33,70 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           Logo(),
+          Row(
+            children: <Widget>[
+              Container(
+                width: 100,
+                alignment: Alignment.centerRight,
+                child: Text(
+                  "Gasolina",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 35,
+                      fontFamily: "Big Shoulders Dispaly"),
+                ),
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Expanded(
+                child: TextFormField(
+                  controller: _gasController,
+                  keyboardType: TextInputType.number,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 45,
+                    fontFamily: "Big Shoulders Display",
+                  ),
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              Container(
+                width: 100,
+                alignment: Alignment.centerRight,
+                child: Text(
+                  "Álcool",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 35,
+                      fontFamily: "Big Shoulders Dispaly"),
+                ),
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Expanded(
+                child: TextFormField(
+                  controller: _gasController,
+                  keyboardType: TextInputType.number,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 45,
+                    fontFamily: "Big Shoulders Display",
+                  ),
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
