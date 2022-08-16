@@ -20,9 +20,10 @@ class Input extends StatelessWidget {
           child: Text(
             label,
             style: TextStyle(
-                color: Colors.white,
-                fontSize: 30,
-                fontFamily: "Big Shoulders Dispaly"),
+              color: Colors.white,
+              fontSize: 35,
+              fontFamily: "Big Shoulders Display",
+            ),
           ),
         ),
         SizedBox(
