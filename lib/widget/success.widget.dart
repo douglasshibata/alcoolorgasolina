@@ -1,7 +1,4 @@
 import 'package:alcoolorgasolina/widget/loading-button.widget.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
 import 'package:flutter/material.dart';
 
 class Success extends StatelessWidget {
