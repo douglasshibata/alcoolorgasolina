@@ -1,4 +1,5 @@
 import 'package:alcoolorgasolina/widget/input.widget.dart';
+import 'package:alcoolorgasolina/widget/loading-button.widget.dart';
 import 'package:alcoolorgasolina/widget/logo.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
@@ -57,50 +58,17 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Container(
-                width: double.infinity,
-                margin: EdgeInsets.all(30),
-                height: 60,
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.8),
-                  borderRadius: BorderRadius.circular(60),
-                ),
-                child: TextButton(
-                  child: Text(
-                    "Calcular novamente",
-                    style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                      fontFamily: "Big Shoulders Display",
-                      fontSize: 25,
-                    ),
-                  ),
-                  onPressed: () {},
-                ),
-              )
+              LoadingButton(
+                  busy: false,
+                  func: () {},
+                  invert: true,
+                  text: "Calcular novamente"),
             ]),
           ),
           Input(label: "Gasolina", controller: _gasController),
           Input(label: "Álcool", controller: _alcoolController),
-          Container(
-            width: double.infinity,
-            margin: EdgeInsets.all(30),
-            height: 60,
-            decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.8),
-              borderRadius: BorderRadius.circular(60),
-            ),
-            child: TextButton(
-              child: Text(
-                "Calcular",
-                style: TextStyle(
-                  color: Theme.of(context).primaryColor,
-                  fontFamily: "Big Shoulders Display",
-                  fontSize: 25,
-                ),
-              ),
-              onPressed: () {},
-            ),
-          )
+          LoadingButton(
+              busy: true, func: () {}, invert: false, text: "Calcular"),
         ],
       ),
     );
